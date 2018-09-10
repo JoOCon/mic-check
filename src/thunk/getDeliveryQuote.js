@@ -6,8 +6,8 @@ export const getDeliveryQuote = (fromAddress, toAddress) => {
   return async (dispatch) => {
     const url = `https://api.postmates.com/v1/customers/${customer_id}/delivery_quotes`;
     const response = await fetch(url, {
-      header: {
-        Authorization: 'Basic OWE4MTk4Y2QtZGVlZi00ZGIyLTk1NDAtM2ExMGJjYWE1Mzg0Og==',
+      headers: {
+        [deliveryApiKey]:'',
         'Content-Type': 'application/json'
       },
       method: 'Post',
