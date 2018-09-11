@@ -3,6 +3,11 @@ export const addUser = (user) => ({
   user
 });
 
+export const getLocalStorageUsers = (users) => ({
+  type: 'GET_LOCAL_STORAGE_USERS',
+  users
+});
+
 export const activeUser = (user) => ({
   type: 'ACTIVE_USER',
   user
