@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { activeUser } from '../../actions';
 import { Redirect, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 export class Login extends Component {
@@ -20,10 +21,19 @@ export class Login extends Component {
     this.setState({ [name]: value });
   }
 
+  handleUser = (foundUser) => {
+    const { userName, email, location } = foundUser;
+    this.props.activeUser({ userName, email, location });
+  }
+
   handleSubmit = async (event) => {
     event.preventDefault();
     const { email, password } = this.state;
     if (email.length && password.length) {
+      const foundUser = this.props.users.find(user => (
+        (user.email === email && user.password === password) ? user : undefined
+      ));
+      (foundUser) ? this.handleUser(foundUser) : alert('Login Information Incorrect');
       this.setState({ email: '', password: '', redirect: true });
     } else {
       alert('Please complete login information');
@@ -59,8 +69,17 @@ export class Login extends Component {
   }
 }
 
-Login.propTypes = {
+export const mapStateToProps = (state) => ({
+  users: state.users
+});
 
+export const mapDispatchToProps = (dispatch) => ({
+  activeUser: (user) => dispatch(activeUser(user))
+});
+
+Login.propTypes = {
+  users: PropTypes.array,
+  activeUser: PropTypes.func
 };
 
-export default connect()(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
