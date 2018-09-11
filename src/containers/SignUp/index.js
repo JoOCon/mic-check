@@ -27,8 +27,8 @@ export class SignUp extends Component {
     event.preventDefault();
     const { userName, email, password, location } = this.state;
     if (userName.length && email.length && password.length && location.length) {
-      this.props.addUser(this.state);
-      this.props.activeUser(this.state);
+      this.props.addUser({ userName, email, password, location });
+      this.props.activeUser({userName, email, location});
       this.setState({ userName: '', email: '', password: '', location: '', redirect: true });
     } else {
       alert('Please complete sign up information');
