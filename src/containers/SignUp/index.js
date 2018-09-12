@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser, activeUser } from '../../actions';
+import { addUser, setActiveUser } from '../../actions';
 import PropTypes from 'prop-types';
 import { Redirect, Link } from 'react-router-dom';
 import './styles.css';
@@ -28,7 +28,7 @@ export class SignUp extends Component {
     const { userName, email, password, location } = this.state;
     if (userName.length && email.length && password.length && location.length) {
       this.props.addUser({ userName, email, password, location });
-      this.props.activeUser({userName, email, location});
+      this.props.setActiveUser({userName, email, location});
       this.setState({ userName: '', email: '', password: '', location: '', redirect: true });
     } else {
       alert('Please complete sign up information');
@@ -36,55 +36,67 @@ export class SignUp extends Component {
   }
 
   render() {
-    const { userName, email, password, location } = this.state;
+    const { userName, email, password, location, redirect } = this.state;
     return (
-      <form className='user-signup' onSubmit={this.handleSubmit}>
-        <h2 className='log-header'>Sign Up</h2>
-        <input
-          className='input-field'
-          name='userName'
-          placeholder='username'
-          value={userName}
-          onChange={this.handleChange}
-        />
-        <input
-          className='input-field'
-          name='email'
-          placeholder='email'
-          type='email'
-          value={email}
-          onChange={this.handleChange}
-        />
-        <input
-          className='input-field'
-          name='password'
-          placeholder='password'
-          type='password'
-          value={password}
-          onChange={this.handleChange}
-        />
-        <input
-          className='input-field'
-          name='location'
-          placeholder='location'
-          type='location'
-          value={location}
-          onChange={this.handleChange}
-        />
-        <button className="signup-button">SignUp</button>
-      </form>
+      <div>
+        <form className='user-signup' onSubmit={this.handleSubmit}>
+          <h2 className='log-header'>Sign Up</h2>
+          <input
+            className='input-field'
+            name='userName'
+            placeholder='username'
+            value={userName}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='email'
+            placeholder='email'
+            type='email'
+            value={email}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='password'
+            placeholder='password'
+            type='password'
+            value={password}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='location'
+            placeholder='location'
+            type='location'
+            value={location}
+            onChange={this.handleChange}
+          />
+          <button className="signup-button">SignUp</button>
+        </form>
+        {redirect && (
+          <Redirect to={`/${this.props.activeUser.userName}`} />
+        )}
+        <Link to='/Login'><button className='login'>Login</button></Link>
+        <Link to='/'><button className='home'>Home</button></Link>
+      </div>
     );
   }
 }
 
+export const mapStateToProps = (state) => ({
+  activeUser: state.activeUser
+});
+
 export const mapDispatchToProps = (dispatch) => ({
   addUser: (user) => dispatch(addUser(user)),
-  activeUser: (user) => dispatch(activeUser(user))
+  setActiveUser: (user) => dispatch(setActiveUser(user))
 });
 
 SignUp.propTypes = {
+  activeUser: PropTypes.object,
   addUser: PropTypes.func,
-  activeUser: PropTypes.func
+  setActiveUser: PropTypes.func
 };
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
