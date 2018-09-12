@@ -20,10 +20,10 @@ export class App extends Component {
     return (
       <div className="App">
         <Route path='/' component={Header} />
+        <Route exact path='/Login' component={Login} />
+        <Route exact path='/SignUp' component={SignUp} />
+        <Route exact path='/RentalForm' component={RentalForm} />
         <Route path='/' component={RentalsContainer} />
-        <Route path='/' component={Login} />
-        <Route path='/' component={SignUp} />
-        <Route path='/' component={RentalForm} />
       </div>
     );
   }
