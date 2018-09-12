@@ -12,7 +12,9 @@ export class SignUp extends Component {
       userName: '',
       email: '',
       password: '',
-      location: '',
+      street: '',
+      city: '',
+      state: '',
       redirect: false
     };
   }
@@ -25,26 +27,46 @@ export class SignUp extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const { userName, email, password, location } = this.state;
-    if (userName.length && email.length && password.length && location.length) {
+    const { userName, email, password, street, city, state } = this.state;
+    if (
+      userName.length && 
+      email.length && 
+      password.length && 
+      street.length && 
+      city.length && 
+      state.length
+    ) {
       const foundUser = this.props.users.find(user => (
         (user.email === email && user.password === password) ? user : undefined
       ));
       if (foundUser) {
         alert('User already exists');
       } else {
-        this.props.addUser({ userName, email, password, location });
-        this.props.setActiveUser({userName, email, location});
+        const user = {
+          userName,
+          password,
+          email,
+          location: `${street}, ${city}, ${state}`
+        };
+        this.props.addUser(user);
+        this.props.setActiveUser({userName, email, location: `${street}, ${city}, ${state}`});
         this.setState({ redirect: true });
       }
-      this.setState({ userName: '', email: '', password: '', location: ''});
+      this.setState({
+        userName: '',
+        email: '',
+        password: '',
+        street: '',
+        city: '',
+        state: ''
+      });
     } else {
       alert('Please complete sign up information');
     }
   }
 
   render() {
-    const { userName, email, password, location, redirect } = this.state;
+    const { userName, email, password, street, city, state, redirect } = this.state;
     return (
       <div>
         <form className='user-signup' onSubmit={this.handleSubmit}>
@@ -74,10 +96,23 @@ export class SignUp extends Component {
           />
           <input
             className='input-field'
-            name='location'
-            placeholder='location'
-            type='location'
-            value={location}
+            name='street'
+            placeholder='street'
+            value={street}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='city'
+            placeholder='city'
+            value={city}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='state'
+            placeholder='state'
+            value={state}
             onChange={this.handleChange}
           />
           <button className="signup-button">SignUp</button>
