@@ -12,10 +12,11 @@ export class NavBar extends Component {
       return (
         <div>
           <h1>{`Hello, ${userName}`}</h1>
-          <Link to={`/${userName}/orders`}><button className='orders'>Your Orders</button></Link>
+          <Link to={`/${userName}/Orders`}><button className='orders'>Your Orders</button></Link>
           <Link to='/'>
             <button onClick={this.props.logoutActiveUser} className='logout'>Logout</button>
           </Link>
+          <Link to={`/${userName}/AddRental`}><button className='add-rental'>Add Rental</button></Link>
         </div>
       );
     };
