@@ -27,9 +27,17 @@ export class SignUp extends Component {
     event.preventDefault();
     const { userName, email, password, location } = this.state;
     if (userName.length && email.length && password.length && location.length) {
-      this.props.addUser({ userName, email, password, location });
-      this.props.setActiveUser({userName, email, location});
-      this.setState({ userName: '', email: '', password: '', location: '', redirect: true });
+      const foundUser = this.props.users.find(user => (
+        (user.email === email && user.password === password) ? user : undefined
+      ));
+      if (foundUser) {
+        alert('User already exists');
+      } else {
+        this.props.addUser({ userName, email, password, location });
+        this.props.setActiveUser({userName, email, location});
+        this.setState({ redirect: true });
+      }
+      this.setState({ userName: '', email: '', password: '', location: ''});
     } else {
       alert('Please complete sign up information');
     }
@@ -85,6 +93,7 @@ export class SignUp extends Component {
 }
 
 export const mapStateToProps = (state) => ({
+  users: state.users,
   activeUser: state.activeUser
 });
 
@@ -94,6 +103,7 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 SignUp.propTypes = {
+  users: PropTypes.array,
   activeUser: PropTypes.object,
   addUser: PropTypes.func,
   setActiveUser: PropTypes.func
