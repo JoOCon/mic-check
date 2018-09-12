@@ -8,8 +8,8 @@ export const getLocalStorageUsers = (users) => ({
   users
 });
 
-export const activeUser = (user) => ({
-  type: 'ACTIVE_USER',
+export const setActiveUser = (user) => ({
+  type: 'SET_ACTIVE_USER',
   user
 });
 
