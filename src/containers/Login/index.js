@@ -34,7 +34,9 @@ export class Login extends Component {
       const foundUser = this.props.users.find(user => (
         (user.email === email && user.password === password) ? user : undefined
       ));
-      (foundUser) ? this.handleUser(foundUser) : alert('Login Information Incorrect');
+      (foundUser) ? 
+        this.handleUser(foundUser) 
+        : alert('Login Information Incorrect or does not exist');
       this.setState({ email: '', password: '' });
     } else {
       alert('Please complete login information');
