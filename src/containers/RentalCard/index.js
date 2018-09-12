@@ -14,13 +14,15 @@ export class RentalCard extends Component {
 
   render() {
     const {name, location, description, image } = this.props;
-    console.log(this.props.activeUser);
     return (
       <div className='rental-card'>
         <img className='rental-image' src={image}/>
-        <h1 className='rental-title'>{name}</h1>
-        <h2 className='rental-location'>{location}</h2>
-        <p className='rental-description'>{description}</p>
+        <div className='card-info'>
+          <h1 className='rental-title'>{name}</h1>
+          <h2 className='rental-location'>Location: {location}</h2>
+          <p className='rental-description'>Info: {description}</p>
+          <button className='rental-button'>Rent</button>
+        </div>
       </div>
     );
   }
@@ -33,7 +35,6 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
   getDeliveryQuote: () => dispatch(getDeliveryQuote())
 });
-
 
 // build cards out to have a redirect to a rental confermation if they are logged in
 
