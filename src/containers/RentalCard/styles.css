@@ -1,0 +1,10 @@
+.rental-card {
+  display: flex; }
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: end; }
+
+.rental-image {
+  height: 12em; }
