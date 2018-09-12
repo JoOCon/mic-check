@@ -13,6 +13,10 @@ export const setActiveUser = (user) => ({
   user
 });
 
+export const logoutActiveUser = () => ({
+  type: 'LOGOUT_ACTIVE_USER'
+});
+
 export const addRental = (item) => ({
   type: 'ADD_RENTAL',
   item
