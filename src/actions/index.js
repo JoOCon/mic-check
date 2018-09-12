@@ -17,6 +17,11 @@ export const logoutActiveUser = () => ({
   type: 'LOGOUT_ACTIVE_USER'
 });
 
+export const getLocalStorageRentals = (rentals) => ({
+  type: 'GET_LOCAL_STORAGE_RENTALS',
+  rentals
+});
+
 export const addRental = (item) => ({
   type: 'ADD_RENTAL',
   item
