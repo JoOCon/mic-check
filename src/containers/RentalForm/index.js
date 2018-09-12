@@ -10,7 +10,9 @@ export class RentalForm extends Component {
     super();
     this.state = {
       name: '',
-      location: '',
+      street: '',
+      city: '',
+      state: '',
       description: '',
       image: '',
       redirect: false
@@ -25,58 +27,95 @@ export class RentalForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const { name, location, description} = this.state;
-    if (name.length && location.length && description.length) {
-      this.props.addRental(this.state);
-      this.setState({ name: '', location: '', description: '', image: '', redirect: true });
+    const { name, street, city, state, description, image} = this.state;
+    if (name.length && street.length && city.length && state.length && description.length) {
+      const rentalItem = {
+        name,
+        location: `${street}, ${city}, ${state}`,
+        description,
+        image
+      };
+      this.props.addRental(rentalItem);
+      this.setState(
+        { 
+          name: '', 
+          street: '', 
+          city: '', 
+          state: '', 
+          description: '', 
+          image: '', 
+          redirect: true 
+        }
+      );
     } else {
       alert('Please complete rental information');
     }
   }
 
   render() {
-    const { name, location, description, image } = this.state;
+    const { name, street, city, state, description, image, redirect } = this.state;
+    const { userName } = this.props.activeUser;
     return (
-      <form className='rental-form' onSubmit={this.handleSubmit}>
-        <h2 className='log-header'>Manage Rental</h2>
-        <input
-          className='input-field'
-          name='name'
-          placeholder='name'
-          value={name}
-          onChange={this.handleChange}
-        />
-        <input
-          className='input-field'
-          name='location'
-          placeholder='location'
-          value={location}
-          onChange={this.handleChange}
-        />
-        <input
-          className='input-field'
-          name='description'
-          placeholder='description'
-          type='text'
-          value={description}
-          onChange={this.handleChange}
-        />
-        <input
-          className='input-field'
-          name='image'
-          placeholder='image'
-          type='url'
-          value={image}
-          onChange={this.handleChange}
-        />
-        <button className="submit">Submit</button>
-      </form>
+      <div>
+        <form className='rental-form' onSubmit={this.handleSubmit}>
+          <h2 className='log-header'>Manage Rental</h2>
+          <input
+            className='input-field'
+            name='name'
+            placeholder='name'
+            value={name}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='street'
+            placeholder='street'
+            value={street}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='city'
+            placeholder='city'
+            value={city}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='state'
+            placeholder='state'
+            value={state}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='description'
+            placeholder='description'
+            type='text'
+            value={description}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='image'
+            placeholder='image'
+            type='url'
+            value={image}
+            onChange={this.handleChange}
+          />
+          <button className="submit">Submit</button>
+        </form>
+        {redirect && (
+          <Redirect to={`/${userName}`} />
+        )}
+        <Link to={`/${userName}`}><button className='back'>Back</button></Link>
+      </div>
     );
   }
 }
 
 export const mapStateToProps = (state) => ({
-
+  activeUser: state.activeUser
 });
 
 export const mapDispatchToProps = (dispatch) => ({
@@ -85,8 +124,9 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 RentalForm.propTypes = {
+  activeUser: PropTypes.object,
   addRental: PropTypes.func,
   removeRental: PropTypes.func
 };
 
-export default connect(null, mapDispatchToProps)(RentalForm);
+export default connect(mapStateToProps, mapDispatchToProps)(RentalForm);
