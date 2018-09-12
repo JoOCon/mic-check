@@ -10,6 +10,7 @@ export class RentalsContainer extends Component {
     const displayRentals = this.props.rentals.map(rental => <RentalCard key={Math.random()} {...rental} /> );
     return (
       <div>
+        RentalsContainer
         {displayRentals}
       </div>
     );
