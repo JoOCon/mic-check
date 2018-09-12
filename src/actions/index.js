@@ -3,9 +3,23 @@ export const addUser = (user) => ({
   user
 });
 
-export const activeUser = (user) => ({
-  type: 'ACTIVE_USER',
+export const getLocalStorageUsers = (users) => ({
+  type: 'GET_LOCAL_STORAGE_USERS',
+  users
+});
+
+export const setActiveUser = (user) => ({
+  type: 'SET_ACTIVE_USER',
   user
+});
+
+export const logoutActiveUser = () => ({
+  type: 'LOGOUT_ACTIVE_USER'
+});
+
+export const getLocalStorageRentals = (rentals) => ({
+  type: 'GET_LOCAL_STORAGE_RENTALS',
+  rentals
 });
 
 export const addRental = (item) => ({

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { setActiveUser } from '../../actions';
 import { Redirect, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 export class Login extends Component {
@@ -20,18 +21,31 @@ export class Login extends Component {
     this.setState({ [name]: value });
   }
 
+  handleUser = (foundUser) => {
+    const { userName, email, location } = foundUser;
+    this.props.setActiveUser({ userName, email, location });
+    this.setState({redirect: true});
+  }
+
   handleSubmit = async (event) => {
     event.preventDefault();
     const { email, password } = this.state;
     if (email.length && password.length) {
-      this.setState({ email: '', password: '', redirect: true });
+      const foundUser = this.props.users.find(user => (
+        (user.email === email && user.password === password) ? user : undefined
+      ));
+      (foundUser) ? 
+        this.handleUser(foundUser) 
+        : alert('Login Information Incorrect or does not exist');
+      this.setState({ email: '', password: '' });
     } else {
       alert('Please complete login information');
     }
   }
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, redirect } = this.state;
+    const { userName } = this.props.activeUser;
     return (
       <div>
         <form className='user-login' onSubmit={this.handleSubmit}>
@@ -54,13 +68,29 @@ export class Login extends Component {
           />
           <button className="Login-button">Login</button>
         </form>
+        {redirect && (
+          <Redirect to={`/${userName}`} />
+        )}
+        <Link to='/SignUp'><button className='sign-up'>Sign Up</button></Link>
+        <Link to='/'><button className='home'>Home</button></Link>
       </div>
     );
   }
 }
 
-Login.propTypes = {
+export const mapStateToProps = (state) => ({
+  users: state.users,
+  activeUser: state.activeUser
+});
 
+export const mapDispatchToProps = (dispatch) => ({
+  setActiveUser: (user) => dispatch(setActiveUser(user))
+});
+
+Login.propTypes = {
+  users: PropTypes.array,
+  activeUser: PropTypes.object,
+  setActiveUser: PropTypes.func
 };
 
-export default connect()(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

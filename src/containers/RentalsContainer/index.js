@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import RentalCard from '../RentalCard';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 export class RentalsContainer extends Component {
   render() {
+    const displayRentals = this.props.rentals.map(rental => <RentalCard key={Math.random()} {...rental} /> );
     return (
       <div>
         RentalsContainer
-        <Route path='/' component={RentalCard} />
+        {displayRentals}
       </div>
     );
   }
 }
 
-RentalsContainer.propTypes = {
+export const mapStateToProps = (state) => ({
+  rentals: state.rentals
+});
 
+RentalsContainer.propTypes = {
+  rentals: PropTypes.array
 };
 
-export default connect()(RentalsContainer);
+export default connect(mapStateToProps)(RentalsContainer);
