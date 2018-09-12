@@ -7,7 +7,7 @@ export class UserAccountDisplay extends Component {
   render() {
     return (
       <div>
-        UserAccountDisplay
+        User Orders
       </div>
     );
   }
