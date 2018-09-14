@@ -18,6 +18,7 @@ export class App extends Component {
     const rentals = JSON.parse(localStorage.getItem('AllRentals'));
     getLocalStorageUsers(users);
     getLocalStorageRentals(rentals);
+    
   }
 
   render() {
