@@ -12,6 +12,10 @@ export class RentalCard extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.getDeliveryQuote();
+  }
+
   render() {
     const {name, location, description, image } = this.props;
     return (
