@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 export const getDeliveryQuote = (fromAddress, toAddress) => {
   let addresses = {
-    pickup_address: "20 McAllister St, San Francisco, CA",
-    dropoff_address: "101 Market St, San Francisco, CA"
+    pickup_address: fromAddress,
+    dropoff_address: toAddress
   };
 
   var deliveryBody = [];
