@@ -28,12 +28,16 @@ export class RentalForm extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     const { name, street, city, state, description, image} = this.state;
+    const { phoneNumber, userName } = this.props.activeUser;
     if (name.length && street.length && city.length && state.length && description.length) {
       const rentalItem = {
         name,
-        location: `${street}, ${city}, ${state}`,
+        itemLocation: `${street}, ${city}, ${state}`,
         description,
-        image
+        image,
+        rentersName: userName,
+        phoneNumber,
+        itemSize: 'big'
       };
       this.props.addRental(rentalItem);
       this.setState(
@@ -62,35 +66,35 @@ export class RentalForm extends Component {
           <input
             className='input-field'
             name='name'
-            placeholder='name'
+            placeholder='Item Name'
             value={name}
             onChange={this.handleChange}
           />
           <input
             className='input-field'
             name='street'
-            placeholder='street'
+            placeholder='Street'
             value={street}
             onChange={this.handleChange}
           />
           <input
             className='input-field'
             name='city'
-            placeholder='city'
+            placeholder='City'
             value={city}
             onChange={this.handleChange}
           />
           <input
             className='input-field'
             name='state'
-            placeholder='state'
+            placeholder='State'
             value={state}
             onChange={this.handleChange}
           />
           <input
             className='input-field'
             name='description'
-            placeholder='description'
+            placeholder='Item Description'
             type='text'
             value={description}
             onChange={this.handleChange}
@@ -98,7 +102,7 @@ export class RentalForm extends Component {
           <input
             className='input-field'
             name='image'
-            placeholder='image'
+            placeholder='Image'
             type='url'
             value={image}
             onChange={this.handleChange}
