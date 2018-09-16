@@ -7,10 +7,13 @@ import './styles.css';
 
 export class RentalsContainer extends Component {
   render() {
-    const displayRentals = this.props.rentals.map(rental => <RentalCard key={Math.random()} {...rental} /> );
+    const uuidv1 = require('uuid/v1');
+    const displayRentals = this.props.rentals.map(rental => ( 
+      <RentalCard key={uuidv1()} {...rental} /> )
+    );
+    
     return (
       <div>
-        RentalsContainer
         {displayRentals}
       </div>
     );
