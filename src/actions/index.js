@@ -41,3 +41,13 @@ export const selectedItem = (item) => ({
   type: 'SELECTED_ITEM',
   item
 });
+
+export const addCompletedOrder = (order) => ({
+  type: 'ADD_COMPLETED_ORDER',
+  order
+});
+
+export const getLocalStorageOrders = (orders) => ({
+  type: 'GET_LOCAL_STORAGE_ORDERS',
+  orders
+});
