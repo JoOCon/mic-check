@@ -9,7 +9,7 @@ export class RentalsContainer extends Component {
   render() {
     const uuidv1 = require('uuid/v1');
     const displayRentals = this.props.rentals.map(rental => ( 
-      <RentalCard key={uuidv1()} {...rental} /> )
+      <RentalCard key={uuidv1()} rental={rental} /> )
     );
     
     return (
