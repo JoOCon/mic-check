@@ -1,6 +1,5 @@
 import { deliveryApiKey, customer_id  } from './apiKeys';
 import { addQuote } from '../actions';
-import PropTypes from 'prop-types';
 
 export const getDeliveryQuote = (fromAddress, toAddress) => {
   let addresses = {
@@ -20,7 +19,7 @@ export const getDeliveryQuote = (fromAddress, toAddress) => {
     const url = `https://api.postmates.com/v1/customers/${customer_id}/delivery_quotes`;
     const response = await fetch(url, {
       headers: {
-        'Authorization': "Basic " + btoa(deliveryApiKey + ":" + ""),
+        Authorization: "Basic " + btoa(deliveryApiKey + ":"),
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       method: 'POST',
