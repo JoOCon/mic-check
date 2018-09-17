@@ -5,6 +5,7 @@ import { Route, withRouter} from 'react-router-dom';
 import { getLocalStorageUsers, getLocalStorageRentals } from '../../actions';
 import RentalsContainer from '../RentalsContainer';
 import UserAccountDisplay from '../UserAccountDisplay';
+import RentalConfirmation from '../RentalConfirmation';
 import SignUp from '../SignUp';
 import Login from '../Login';
 import RentalForm from '../RentalForm';
@@ -18,7 +19,6 @@ export class App extends Component {
     const rentals = JSON.parse(localStorage.getItem('AllRentals'));
     getLocalStorageUsers(users);
     getLocalStorageRentals(rentals);
-    
   }
 
   render() {
@@ -32,6 +32,7 @@ export class App extends Component {
         <Route exact path='/' component={RentalsContainer} />
         <Route exact path={`/${userName}`} component={RentalsContainer} />
         <Route exact path={`/${userName}/Orders`} component={UserAccountDisplay} />
+        <Route exact path={`/${userName}/Confirmation`} component={RentalConfirmation} />
       </div>
     );
   }
