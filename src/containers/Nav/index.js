@@ -38,7 +38,7 @@ export class NavBar extends Component {
       return (
         <div>
           <Link to='/Login'><button className='login'>Login</button></Link>
-          <Link to='/SignuUp'><button className='signup'>SignUp</button></Link>
+          <Link to='/SignUp'><button className='signup'>SignUp</button></Link>
         </div>
       );
     };
