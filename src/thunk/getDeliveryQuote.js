@@ -7,10 +7,10 @@ export const getDeliveryQuote = (fromAddress, toAddress) => {
     dropoff_address: toAddress
   };
 
-  var deliveryBody = [];
-  for (var property in addresses) {
-    var encodedKey = encodeURIComponent(property);
-    var encodedValue = encodeURIComponent(addresses[property]);
+  let deliveryBody = [];
+  for (let property in addresses) {
+    let encodedKey = encodeURIComponent(property);
+    let encodedValue = encodeURIComponent(addresses[property]);
     deliveryBody.push(encodedKey + "=" + encodedValue);
   }
   deliveryBody = deliveryBody.join("&");
