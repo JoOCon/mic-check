@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
-import { getDeliveryQuote } from '../../thunk/getDeliveryQuote';
-import { selectedItem } from '../../actions';
 import PropTypes from 'prop-types';
+import { selectedItem } from '../../actions';
+import { getDeliveryQuote } from '../../thunk/getDeliveryQuote';
 import './styles.css';
 
 export class RentalCard extends Component {
@@ -15,14 +15,14 @@ export class RentalCard extends Component {
   }
 
   handleQuote() {
-    const { activeUser, rental, selectedItem, getDeliveryQuote } = this.props;
+    const { activeUser, rental, selectedItem, getDeliveryQuote} = this.props;
     selectedItem(rental);
     getDeliveryQuote(activeUser.userLocation, rental.itemLocation);
     this.setState({ redirect: true });
   }
 
   render() {
-    const {name, itemLocation, description, image } = this.props.rental;
+    const {name, itemLocation, description, image, rentalPrice  } = this.props.rental;
     const { userName } = this.props.activeUser;
     const rentalButton = () => {
       return userName ? 
@@ -38,6 +38,7 @@ export class RentalCard extends Component {
             <h1 className='rental-title'>{name}</h1>
             <h2 className='rental-location'>Location: {itemLocation}</h2>
             <p className='rental-description'>Info: {description}</p>
+            <h3 className='rental-price'>Price: ${rentalPrice}</h3>
             {rentalButton()}
           </div>
         </div>
