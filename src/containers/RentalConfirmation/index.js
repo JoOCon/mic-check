@@ -44,7 +44,7 @@ export class RentalConfirmation extends Component {
         return (
           <div>
             <h1>{name}</h1>
-            <img src={image}/>
+            <img alt='rental item' src={image}/>
             <h1>Item Info: {description}</h1>
             <h1>Estimated Arrival: {dropoff_eta}</h1>
             <h1>Delivery Duration: {duration} minutes</h1>
@@ -55,7 +55,7 @@ export class RentalConfirmation extends Component {
         );
       } else {
         return (
-          <img className='loading-gif' src={loadingGif}/>
+          <img className='loading-gif' alt='loading animation' src={loadingGif}/>
         );
       }
     };
