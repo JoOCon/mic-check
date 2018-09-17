@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
-import { Header } from '../../components/Header';
 import { connect } from 'react-redux';
 import { Route, withRouter} from 'react-router-dom';
-import { getLocalStorageUsers, getLocalStorageRentals } from '../../actions';
+import PropTypes from 'prop-types';
+import { 
+  getLocalStorageUsers, 
+  getLocalStorageRentals, 
+  getLocalStorageOrders 
+} from '../../actions';
+import { Header } from '../../components/Header';
+import Login from '../Login';
+import SignUp from '../SignUp';
+import RentalForm from '../RentalForm';
 import RentalsContainer from '../RentalsContainer';
 import UserAccountDisplay from '../UserAccountDisplay';
 import RentalConfirmation from '../RentalConfirmation';
-import SignUp from '../SignUp';
-import Login from '../Login';
-import RentalForm from '../RentalForm';
-import PropTypes from 'prop-types';
 import './styles.css';
 
 export class App extends Component {
   componentDidMount() {
-    const { getLocalStorageUsers, getLocalStorageRentals } = this.props;
+    const {
+      getLocalStorageUsers,
+      getLocalStorageRentals,
+      getLocalStorageOrders
+    } = this.props;
     const users = JSON.parse(localStorage.getItem('AllUsers'));
     const rentals = JSON.parse(localStorage.getItem('AllRentals'));
+    const orders = JSON.parse(localStorage.getItem('AllCompletedOrders'));
     getLocalStorageUsers(users);
     getLocalStorageRentals(rentals);
+    getLocalStorageOrders(orders);
   }
 
   render() {
@@ -44,13 +54,15 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
   getLocalStorageUsers: (users) => dispatch(getLocalStorageUsers(users)),
-  getLocalStorageRentals: (rentals) => dispatch(getLocalStorageRentals(rentals))
+  getLocalStorageRentals: (rentals) => dispatch(getLocalStorageRentals(rentals)),
+  getLocalStorageOrders: (orders) => dispatch(getLocalStorageOrders(orders))
 });
 
 App.propTypes = {
   activeUser: PropTypes.object,
   getLocalStorageUsers: PropTypes.func,
-  getLocalStorageRentals: PropTypes.func
+  getLocalStorageRentals: PropTypes.func,
+  getLocalStorageOrders: PropTypes.func
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
