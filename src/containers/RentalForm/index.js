@@ -15,6 +15,7 @@ export class RentalForm extends Component {
       state: '',
       description: '',
       image: '',
+      rentalPrice: '',
       redirect: false
     };
   }
@@ -27,13 +28,25 @@ export class RentalForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const { name, street, city, state, description, image} = this.state;
-    if (name.length && street.length && city.length && state.length && description.length) {
+    const { name, street, city, state, description, image, rentalPrice} = this.state;
+    const { phoneNumber, userName } = this.props.activeUser;
+    const uuidv1 = require('uuid/v1');
+    if (name.length 
+      && street.length 
+      && city.length 
+      && state.length 
+      && description.length 
+      && rentalPrice.length) {
       const rentalItem = {
         name,
-        location: `${street}, ${city}, ${state}`,
+        itemLocation: `${street}, ${city}, ${state}`,
         description,
-        image
+        image,
+        rentalPrice,
+        rentersName: userName,
+        phoneNumber,
+        itemSize: 'big',
+        id: uuidv1()
       };
       this.props.addRental(rentalItem);
       this.setState(
@@ -43,7 +56,8 @@ export class RentalForm extends Component {
           city: '', 
           state: '', 
           description: '', 
-          image: '', 
+          image: '',
+          rentalPrice: '',
           redirect: true 
         }
       );
@@ -53,7 +67,16 @@ export class RentalForm extends Component {
   }
 
   render() {
-    const { name, street, city, state, description, image, redirect } = this.state;
+    const {
+      name,
+      street,
+      city,
+      state,
+      description,
+      image,
+      rentalPrice,
+      redirect
+    } = this.state;
     const { userName } = this.props.activeUser;
     return (
       <div>
@@ -62,43 +85,51 @@ export class RentalForm extends Component {
           <input
             className='input-field'
             name='name'
-            placeholder='name'
+            placeholder='Item Name'
             value={name}
             onChange={this.handleChange}
           />
           <input
             className='input-field'
             name='street'
-            placeholder='street'
+            placeholder='Street'
             value={street}
             onChange={this.handleChange}
           />
           <input
             className='input-field'
             name='city'
-            placeholder='city'
+            placeholder='City'
             value={city}
             onChange={this.handleChange}
           />
           <input
             className='input-field'
             name='state'
-            placeholder='state'
+            placeholder='State'
             value={state}
             onChange={this.handleChange}
           />
           <input
             className='input-field'
             name='description'
-            placeholder='description'
+            placeholder='Item Description'
             type='text'
             value={description}
             onChange={this.handleChange}
           />
           <input
             className='input-field'
+            name='rentalPrice'
+            placeholder='Rental Price'
+            type='number'
+            value={rentalPrice}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
             name='image'
-            placeholder='image'
+            placeholder='Image'
             type='url'
             value={image}
             onChange={this.handleChange}

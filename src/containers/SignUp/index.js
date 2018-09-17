@@ -11,6 +11,7 @@ export class SignUp extends Component {
     this.state = {
       userName: '',
       email: '',
+      phoneNumber: '',
       password: '',
       street: '',
       city: '',
@@ -27,11 +28,12 @@ export class SignUp extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const { userName, email, password, street, city, state } = this.state;
+    const { userName, email, password, phoneNumber, street, city, state } = this.state;
     if (
       userName.length && 
       email.length && 
       password.length && 
+      phoneNumber.length && 
       street.length && 
       city.length && 
       state.length
@@ -46,16 +48,23 @@ export class SignUp extends Component {
           userName,
           password,
           email,
-          location: `${street}, ${city}, ${state}`
+          phoneNumber,
+          userLocation: `${street}, ${city}, ${state}`
         };
         this.props.addUser(user);
-        this.props.setActiveUser({userName, email, location: `${street}, ${city}, ${state}`});
+        this.props.setActiveUser({
+          userName,
+          email,
+          phoneNumber,
+          userLocation: `${street}, ${city}, ${state}`
+        });
         this.setState({ redirect: true });
       }
       this.setState({
         userName: '',
         email: '',
         password: '',
+        phoneNumber: '',
         street: '',
         city: '',
         state: ''
@@ -66,7 +75,7 @@ export class SignUp extends Component {
   }
 
   render() {
-    const { userName, email, password, street, city, state, redirect } = this.state;
+    const { userName, email, password, phoneNumber, street, city, state, redirect } = this.state;
     return (
       <div>
         <form className='user-signup' onSubmit={this.handleSubmit}>
@@ -84,6 +93,14 @@ export class SignUp extends Component {
             placeholder='email'
             type='email'
             value={email}
+            onChange={this.handleChange}
+          />
+          <input
+            className='input-field'
+            name='phoneNumber'
+            placeholder='Phone Number'
+            type='phoneNumber'
+            value={phoneNumber}
             onChange={this.handleChange}
           />
           <input

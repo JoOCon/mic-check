@@ -22,8 +22,8 @@ export class Login extends Component {
   }
 
   handleUser = (foundUser) => {
-    const { userName, email, location } = foundUser;
-    this.props.setActiveUser({ userName, email, location });
+    const { userName, email, phoneNumber, userLocation } = foundUser;
+    this.props.setActiveUser({ userName, email, phoneNumber, userLocation });
     this.setState({redirect: true});
   }
 

@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
 import RentalCard from '../RentalCard';
 import PropTypes from 'prop-types';
 import './styles.css';
 
 export class RentalsContainer extends Component {
   render() {
-    const displayRentals = this.props.rentals.map(rental => <RentalCard key={Math.random()} {...rental} /> );
+    const uuidv1 = require('uuid/v1');
+    const displayRentals = this.props.rentals.map(rental => ( 
+      <RentalCard key={uuidv1()} rental={rental} /> )
+    );
+    
     return (
       <div>
-        RentalsContainer
         {displayRentals}
       </div>
     );

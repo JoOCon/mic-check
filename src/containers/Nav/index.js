@@ -16,7 +16,9 @@ export class NavBar extends Component {
           <Link to='/'>
             <button onClick={this.props.logoutActiveUser} className='logout'>Logout</button>
           </Link>
-          <Link to={`/${userName}/AddRental`}><button className='add-rental'>Add Rental</button></Link>
+          <Link to={`/${userName}/AddRental`}>
+            <button className='add-rental'>Add Rental</button>
+          </Link>
         </div>
       );
     };
@@ -35,8 +37,8 @@ export class NavBar extends Component {
     const mainNav = () => {
       return (
         <div>
-          <Link to='/login'><button className='login'>Login</button></Link>
-          <Link to='/signup'><button className='signup'>SignUp</button></Link>
+          <Link to='/Login'><button className='login'>Login</button></Link>
+          <Link to='/SignUp'><button className='signup'>SignUp</button></Link>
         </div>
       );
     };
@@ -44,7 +46,8 @@ export class NavBar extends Component {
     return (
       <div>
         <Route exact path={`/${userName}`} component={loggedIn}></Route>
-        <Route exact path={`/${userName}/orders`} component={ordersPage}></Route>
+        <Route exact path={`/${userName}/Orders`} component={ordersPage}></Route>
+        <Route exact path={`/${userName}/Confirmation`} component={ordersPage}></Route>
         <Route exact path='/' component={mainNav}></Route>
       </div>
     );
