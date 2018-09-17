@@ -33,7 +33,8 @@ describe('Action tests', () => {
     expect(result).toEqual(expectation);
   });
 
-  it('should return a object with type of GET_LOCAL_STORAGE_RENTALS, with the rentals array', () => {
+  it(`should return a object with type of GET_LOCAL_STORAGE_RENTALS, 
+  with the rentals array`, () => {
     const expectation = { type: 'GET_LOCAL_STORAGE_RENTALS', rentals: mockItems };
     const result = actions.getLocalStorageRentals(mockItems);
     expect(result).toEqual(expectation);
