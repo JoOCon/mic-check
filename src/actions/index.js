@@ -36,3 +36,8 @@ export const addQuote = (deliveryQuote) => ({
   type: 'ADD_QUOTE',
   deliveryQuote
 });
+
+export const selectedItem = (item) => ({
+  type: 'SELECTED_ITEM',
+  item
+});
