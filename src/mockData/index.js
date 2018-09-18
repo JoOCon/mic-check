@@ -23,6 +23,7 @@ export const mockItem = {
   location: '101 Market St, San Francisco, CA',
   description: 'Its a guitar!',
   image: "https://guitar-image.png",
+  rentalPrice: 50,
   id: 1
 };
 
@@ -31,6 +32,7 @@ export const mockItem2 = {
   location: '101 Market St, San Francisco, CA',
   description: 'Its a amp!',
   image: "https://amp-image.png",
+  rentalPrice: 50,
   id: 2
 };
 
@@ -39,6 +41,7 @@ export const mockItems = [{
   location: '101 Market St, San Francisco, CA',
   description: 'Its a guitar!',
   image: "https://guitar-image.png",
+  rentalPrice: 50,
   id: 1
 }, 
 {
@@ -46,6 +49,7 @@ export const mockItems = [{
   location: '101 Market St, San Francisco, CA',
   description: 'Its a amp!',
   image: "https://amp-image.png",
+  rentalPrice: 50,
   id: 2
 }];
 
@@ -76,4 +80,44 @@ export const mockOrderInfo = {
   dropoff_name: 'Tim',
   dropoff_phone_number: 2223334444,
   dropoff_notes: 'Tim@timmmy.com'
+};
+
+export const mockOrderConfirmation = {
+  undeliverable_action: null,
+  currency: "usd",
+  dropoff_identifier: "",
+  manifest: {
+    description: 'a box of shoes'
+  },
+  id: "del_Lu-c_oyiH69mDF",
+  dropoff: {
+    phone_number: 3033334444,
+    name: 'Allen',
+    notes: 'Tim@timmmy.com'
+  },
+  fee: 571,
+  quote_id: "dqt_Lu-c_vlL5PdvEF",
+  pickup_deadline: "2018-09-17T22:40:07Z",
+  tip: null,
+  pickup: {
+    phone_number: 2223334444,
+    name: 'Tim',
+    notes: ''
+  },
+  live_mode: false,
+  related_deliveries: [],
+  status: "pending",
+  updated: "2018-09-17T22:20:07Z",
+  complete: false,
+  courier: null,
+  undeliverable_reason: null,
+  courier_imminent: false,
+  dropoff_deadline: "2018-09-17T22:50:07Z",
+  dropoff_eta: null,
+  tracking_url: "https://postmates.com/track/del_Lu-c_oyiH69mDF",
+  kind: "delivery",
+  created: "2018-09-17T22:20:07Z",
+  pickup_ready: "2018-09-17T22:30:07Z",
+  dropoff_ready: "2018-09-17T22:30:07Z",
+  pickup_eta: null
 };
