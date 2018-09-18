@@ -16,7 +16,6 @@ export class Login extends Component {
   }
 
   handleChange = (event) => {
-    event.preventDefault();
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
