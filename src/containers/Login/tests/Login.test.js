@@ -24,6 +24,33 @@ describe('Login tests', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should have initial state', () => {
+    const mockInitalState = {
+      email: '',
+      password: '',
+      redirect: false
+    };
+    expect(wrapper.state()).toEqual(mockInitalState);
+  });
+
+  describe('handleChange Tests', () => {
+    it('should have Email updated in state', () => {
+      const mockEmailEvent = {target: {name: 'email', value: 'j@j'}};
+      wrapper.instance().handleChange(mockEmailEvent);
+      const expected = mockEmailEvent.target.value;
+      const result = wrapper.state('email');
+      expect(result).toEqual(expected);
+    });
+
+    it('should have password updated in state', () => {
+      const mockPasswordEvent = {target: {name: 'password', value: 'j'}};
+      wrapper.instance().handleChange(mockPasswordEvent);
+      const expected = mockPasswordEvent.target.value;
+      const result = wrapper.state('password');
+      expect(result).toEqual(expected);
+    });
+  });
+
   describe('MapStateToProps', () => {
     it('should have a users data object in props', () => {
       const mockState = {users: mockUsers};
