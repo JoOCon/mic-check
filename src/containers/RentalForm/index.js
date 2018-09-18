@@ -21,7 +21,6 @@ export class RentalForm extends Component {
   }
 
   handleChange = (event) => {
-    event.preventDefault();
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
