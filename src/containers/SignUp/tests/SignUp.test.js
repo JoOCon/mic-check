@@ -1,33 +1,34 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Login, mapStateToProps, mapDispatchToProps } from '../';
+import { SignUp, mapStateToProps, mapDispatchToProps } from '../';
 import * as mockData from '../../../mockData';
 import * as actions from '../../../actions';
 
-describe('Login tests', () => {
+describe('SignUp tests', () => {
   let wrapper;
   let mockRunFunction;
   const { mockUser, mockUsers } = mockData;
-  const { setActiveUser } = actions;
+  const { setActiveUser, addUser } = actions;
   beforeEach(() => {
     mockRunFunction = jest.fn();
     wrapper = shallow( 
-      <Login 
+      <SignUp 
         users={mockUsers}
         activeUser={mockUser}
+        addUser={mockRunFunction}
         setActiveUser={mockRunFunction}
       /> 
     );
   });
 
-  it('renders the Login with the correct props', () => {
+  it('renders the SignUp with the correct props', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
   describe('MapStateToProps', () => {
     it('should have a users data object in props', () => {
-      const mockState = {users: mockUsers};
-      const expected = {users: mockUsers};
+      const mockState = {users: mockUser};
+      const expected = {users: mockUser};
       const props = mapStateToProps(mockState);
       expect(props).toEqual(expected);
     });
@@ -44,6 +45,13 @@ describe('Login tests', () => {
     let mockDispatch;
     beforeEach(() => {
       mockDispatch = jest.fn();
+    });
+
+    it('should dispatch addUser when called', () => {
+      const mockAction = addUser(mockUser);
+      const props = mapDispatchToProps(mockDispatch);
+      props.addUser(mockUser);
+      expect(mockDispatch).toBeCalledWith(mockAction);
     });
 
     it('should dispatch setActiveUser when called', () => {

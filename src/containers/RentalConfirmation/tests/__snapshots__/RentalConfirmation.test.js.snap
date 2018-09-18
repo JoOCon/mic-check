@@ -1,0 +1,509 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RentalConfirmation tests renders the RentalConfirmation with the correct props 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RentalConfirmation
+    activeUser={
+        Object {
+            "email": "THanks@hanks.com",
+            "location": "20 McAllister St, San Francisco, CA",
+            "password": "password",
+            "userName": "Tom Hanks",
+          }
+    }
+    createDeliveryPost={[Function]}
+    quote={
+        Object {
+            "created": "2018-09-13T00:40:02Z",
+            "currency": "usd",
+            "currency_type": "USD",
+            "dropoff_eta": "2018-09-13T01:25:02Z",
+            "duration": 45,
+            "expires": "2018-09-13T00:45:01Z",
+            "fee": 1140,
+            "id": "dqt_Ltalsge5ktl1YV",
+            "kind": "delivery_quote",
+            "pickup_duration": 5,
+          }
+    }
+    removeRental={[Function]}
+    selectedItem={
+        Object {
+            "description": "Its a guitar!",
+            "id": 1,
+            "image": "https://guitar-image.png",
+            "location": "101 Market St, San Francisco, CA",
+            "name": "Guitar",
+            "rentalPrice": 50,
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <h1>
+                    Guitar
+          </h1>
+          <img
+                    alt="rental item"
+                    src="https://guitar-image.png"
+          />
+          <h1>
+                    Item Info: 
+                    Its a guitar!
+          </h1>
+          <h1>
+                    Estimated Arrival: 
+                    2018-09-13T01:25:02Z
+          </h1>
+          <h1>
+                    Delivery Duration: 
+                    45
+                     minutes
+          </h1>
+          <h1>
+                    Rental Cost: $
+                    61.4
+          </h1>
+          <h1>
+                    Offer Expires At: 
+                    2018-09-13T00:45:01Z
+          </h1>
+          <button
+                    onClick={[Function]}
+          >
+                    Place Order
+          </button>
+</div>,
+        false,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h1>
+              Guitar
+</h1>,
+            <img
+              alt="rental item"
+              src="https://guitar-image.png"
+/>,
+            <h1>
+              Item Info: 
+              Its a guitar!
+</h1>,
+            <h1>
+              Estimated Arrival: 
+              2018-09-13T01:25:02Z
+</h1>,
+            <h1>
+              Delivery Duration: 
+              45
+               minutes
+</h1>,
+            <h1>
+              Rental Cost: $
+              61.4
+</h1>,
+            <h1>
+              Offer Expires At: 
+              2018-09-13T00:45:01Z
+</h1>,
+            <button
+              onClick={[Function]}
+>
+              Place Order
+</button>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Guitar",
+            },
+            "ref": null,
+            "rendered": "Guitar",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "rental item",
+              "src": "https://guitar-image.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Item Info: ",
+                "Its a guitar!",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Item Info: ",
+              "Its a guitar!",
+            ],
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Estimated Arrival: ",
+                "2018-09-13T01:25:02Z",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Estimated Arrival: ",
+              "2018-09-13T01:25:02Z",
+            ],
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Delivery Duration: ",
+                45,
+                " minutes",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Delivery Duration: ",
+              45,
+              " minutes",
+            ],
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Rental Cost: $",
+                61.4,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Rental Cost: $",
+              61.4,
+            ],
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Offer Expires At: ",
+                "2018-09-13T00:45:01Z",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Offer Expires At: ",
+              "2018-09-13T00:45:01Z",
+            ],
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Place Order",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Place Order",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <h1>
+                        Guitar
+            </h1>
+            <img
+                        alt="rental item"
+                        src="https://guitar-image.png"
+            />
+            <h1>
+                        Item Info: 
+                        Its a guitar!
+            </h1>
+            <h1>
+                        Estimated Arrival: 
+                        2018-09-13T01:25:02Z
+            </h1>
+            <h1>
+                        Delivery Duration: 
+                        45
+                         minutes
+            </h1>
+            <h1>
+                        Rental Cost: $
+                        61.4
+            </h1>
+            <h1>
+                        Offer Expires At: 
+                        2018-09-13T00:45:01Z
+            </h1>
+            <button
+                        onClick={[Function]}
+            >
+                        Place Order
+            </button>
+</div>,
+          false,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1>
+                Guitar
+</h1>,
+              <img
+                alt="rental item"
+                src="https://guitar-image.png"
+/>,
+              <h1>
+                Item Info: 
+                Its a guitar!
+</h1>,
+              <h1>
+                Estimated Arrival: 
+                2018-09-13T01:25:02Z
+</h1>,
+              <h1>
+                Delivery Duration: 
+                45
+                 minutes
+</h1>,
+              <h1>
+                Rental Cost: $
+                61.4
+</h1>,
+              <h1>
+                Offer Expires At: 
+                2018-09-13T00:45:01Z
+</h1>,
+              <button
+                onClick={[Function]}
+>
+                Place Order
+</button>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Guitar",
+              },
+              "ref": null,
+              "rendered": "Guitar",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "rental item",
+                "src": "https://guitar-image.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Item Info: ",
+                  "Its a guitar!",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Item Info: ",
+                "Its a guitar!",
+              ],
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Estimated Arrival: ",
+                  "2018-09-13T01:25:02Z",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Estimated Arrival: ",
+                "2018-09-13T01:25:02Z",
+              ],
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Delivery Duration: ",
+                  45,
+                  " minutes",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Delivery Duration: ",
+                45,
+                " minutes",
+              ],
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Rental Cost: $",
+                  61.4,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Rental Cost: $",
+                61.4,
+              ],
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Offer Expires At: ",
+                  "2018-09-13T00:45:01Z",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Offer Expires At: ",
+                "2018-09-13T00:45:01Z",
+              ],
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Place Order",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Place Order",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "disableLifecycleMethods": true,
+    "hydrateIn": undefined,
+  },
+}
+`;

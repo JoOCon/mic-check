@@ -1,7 +1,7 @@
 import { deliveryApiKey, customer_id  } from './apiKeys';
 import { addCompletedOrder } from '../actions';
 
-export const creatDeliveryPost = (orderInfo) => {
+export const createDeliveryPost = (orderInfo) => {
   let orderObject = orderInfo;
   let deliveryBody = [];
   for (let property in orderObject) {

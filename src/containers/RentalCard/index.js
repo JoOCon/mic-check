@@ -61,8 +61,8 @@ export const mapDispatchToProps = (dispatch) => ({
 
 RentalCard.propTypes = {
   rental: PropTypes.object,
-  getDeliveryQuote: PropTypes.func,
   activeUser: PropTypes.object,
+  getDeliveryQuote: PropTypes.func,
   selectedItem: PropTypes.func
 };
 

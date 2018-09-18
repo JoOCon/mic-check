@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { creatDeliveryPost } from '../../thunk/creatDeliveryPost';
+import { createDeliveryPost } from '../../thunk/createDeliveryPost';
 import { removeRental } from '../../actions';
 import loadingGif from '../../loadingGif.gif';
 import './styles.css';
@@ -16,7 +16,7 @@ export class RentalConfirmation extends Component {
   }
 
   handleOrder() {
-    const { activeUser, selectedItem, creatDeliveryPost, removeRental } = this.props;
+    const { activeUser, selectedItem, createDeliveryPost, removeRental } = this.props;
     const orderInfo = {
       manifest: selectedItem.description,
       'manifest_items[].name': selectedItem.name,
@@ -29,7 +29,7 @@ export class RentalConfirmation extends Component {
       dropoff_phone_number: activeUser.phoneNumber,
       dropoff_notes: activeUser.email
     };
-    creatDeliveryPost(orderInfo);
+    createDeliveryPost(orderInfo);
     removeRental(selectedItem);
     this.setState({ redirect: true });
   }
@@ -75,7 +75,7 @@ RentalConfirmation.propTypes = {
   quote: PropTypes.object,
   activeUser: PropTypes.object,
   selectedItem: PropTypes.object,
-  creatDeliveryPost: PropTypes.func,
+  createDeliveryPost: PropTypes.func,
   removeRental: PropTypes.func
 };
 
@@ -86,7 +86,7 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  creatDeliveryPost: (orderInfo) => dispatch(creatDeliveryPost(orderInfo)),
+  createDeliveryPost: (orderInfo) => dispatch(createDeliveryPost(orderInfo)),
   removeRental: (item) => dispatch(removeRental(item))
 });
 

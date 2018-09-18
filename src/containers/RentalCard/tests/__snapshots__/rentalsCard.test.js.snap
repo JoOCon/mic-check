@@ -1,0 +1,541 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RentalsCard tests renders the RentalCard with the correct props 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RentalCard
+    activeUser={
+        Object {
+            "email": "THanks@hanks.com",
+            "location": "20 McAllister St, San Francisco, CA",
+            "password": "password",
+            "userName": "Tom Hanks",
+          }
+    }
+    getDeliveryQuote={[Function]}
+    rental={
+        Object {
+            "description": "Its a guitar!",
+            "id": 1,
+            "image": "https://guitar-image.png",
+            "location": "101 Market St, San Francisco, CA",
+            "name": "Guitar",
+            "rentalPrice": 50,
+          }
+    }
+    selectedItem={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="rental-card"
+>
+          <img
+                    alt="item for rent"
+                    className="rental-image"
+                    src="https://guitar-image.png"
+          />
+          <div
+                    className="card-info"
+          >
+                    <h1
+                              className="rental-title"
+                    >
+                              Guitar
+                    </h1>
+                    <h2
+                              className="rental-location"
+                    >
+                              Location: 
+                    </h2>
+                    <p
+                              className="rental-description"
+                    >
+                              Info: 
+                              Its a guitar!
+                    </p>
+                    <h3
+                              className="rental-price"
+                    >
+                              Price: $
+                              50
+                    </h3>
+                    <button
+                              className="rental-button"
+                              onClick={[Function]}
+                    >
+                              Rent
+                    </button>
+          </div>
+</div>,
+        false,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <img
+              alt="item for rent"
+              className="rental-image"
+              src="https://guitar-image.png"
+/>,
+            <div
+              className="card-info"
+>
+              <h1
+                            className="rental-title"
+              >
+                            Guitar
+              </h1>
+              <h2
+                            className="rental-location"
+              >
+                            Location: 
+              </h2>
+              <p
+                            className="rental-description"
+              >
+                            Info: 
+                            Its a guitar!
+              </p>
+              <h3
+                            className="rental-price"
+              >
+                            Price: $
+                            50
+              </h3>
+              <button
+                            className="rental-button"
+                            onClick={[Function]}
+              >
+                            Rent
+              </button>
+</div>,
+          ],
+          "className": "rental-card",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "item for rent",
+              "className": "rental-image",
+              "src": "https://guitar-image.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h1
+                  className="rental-title"
+>
+                  Guitar
+</h1>,
+                <h2
+                  className="rental-location"
+>
+                  Location: 
+</h2>,
+                <p
+                  className="rental-description"
+>
+                  Info: 
+                  Its a guitar!
+</p>,
+                <h3
+                  className="rental-price"
+>
+                  Price: $
+                  50
+</h3>,
+                <button
+                  className="rental-button"
+                  onClick={[Function]}
+>
+                  Rent
+</button>,
+              ],
+              "className": "card-info",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Guitar",
+                  "className": "rental-title",
+                },
+                "ref": null,
+                "rendered": "Guitar",
+                "type": "h1",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Location: ",
+                    undefined,
+                  ],
+                  "className": "rental-location",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Location: ",
+                  undefined,
+                ],
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Info: ",
+                    "Its a guitar!",
+                  ],
+                  "className": "rental-description",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Info: ",
+                  "Its a guitar!",
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Price: $",
+                    50,
+                  ],
+                  "className": "rental-price",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Price: $",
+                  50,
+                ],
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Rent",
+                  "className": "rental-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Rent",
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="rental-card"
+>
+            <img
+                        alt="item for rent"
+                        className="rental-image"
+                        src="https://guitar-image.png"
+            />
+            <div
+                        className="card-info"
+            >
+                        <h1
+                                    className="rental-title"
+                        >
+                                    Guitar
+                        </h1>
+                        <h2
+                                    className="rental-location"
+                        >
+                                    Location: 
+                        </h2>
+                        <p
+                                    className="rental-description"
+                        >
+                                    Info: 
+                                    Its a guitar!
+                        </p>
+                        <h3
+                                    className="rental-price"
+                        >
+                                    Price: $
+                                    50
+                        </h3>
+                        <button
+                                    className="rental-button"
+                                    onClick={[Function]}
+                        >
+                                    Rent
+                        </button>
+            </div>
+</div>,
+          false,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <img
+                alt="item for rent"
+                className="rental-image"
+                src="https://guitar-image.png"
+/>,
+              <div
+                className="card-info"
+>
+                <h1
+                                className="rental-title"
+                >
+                                Guitar
+                </h1>
+                <h2
+                                className="rental-location"
+                >
+                                Location: 
+                </h2>
+                <p
+                                className="rental-description"
+                >
+                                Info: 
+                                Its a guitar!
+                </p>
+                <h3
+                                className="rental-price"
+                >
+                                Price: $
+                                50
+                </h3>
+                <button
+                                className="rental-button"
+                                onClick={[Function]}
+                >
+                                Rent
+                </button>
+</div>,
+            ],
+            "className": "rental-card",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "item for rent",
+                "className": "rental-image",
+                "src": "https://guitar-image.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h1
+                    className="rental-title"
+>
+                    Guitar
+</h1>,
+                  <h2
+                    className="rental-location"
+>
+                    Location: 
+</h2>,
+                  <p
+                    className="rental-description"
+>
+                    Info: 
+                    Its a guitar!
+</p>,
+                  <h3
+                    className="rental-price"
+>
+                    Price: $
+                    50
+</h3>,
+                  <button
+                    className="rental-button"
+                    onClick={[Function]}
+>
+                    Rent
+</button>,
+                ],
+                "className": "card-info",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Guitar",
+                    "className": "rental-title",
+                  },
+                  "ref": null,
+                  "rendered": "Guitar",
+                  "type": "h1",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Location: ",
+                      undefined,
+                    ],
+                    "className": "rental-location",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Location: ",
+                    undefined,
+                  ],
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Info: ",
+                      "Its a guitar!",
+                    ],
+                    "className": "rental-description",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Info: ",
+                    "Its a guitar!",
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Price: $",
+                      50,
+                    ],
+                    "className": "rental-price",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Price: $",
+                    50,
+                  ],
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Rent",
+                    "className": "rental-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Rent",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "disableLifecycleMethods": true,
+    "hydrateIn": undefined,
+  },
+}
+`;

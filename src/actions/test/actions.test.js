@@ -7,7 +7,8 @@ describe('Action tests', () => {
     mockUsers,
     mockItem,
     mockItems,
-    mockQuoteData
+    mockQuoteData,
+    mockOrderInfo
   } = mockData;
   it('should return a object with type of ADD_USER, with the user info', () => {
     const expectation = { type: 'ADD_USER', user: mockUser };
@@ -33,7 +34,8 @@ describe('Action tests', () => {
     expect(result).toEqual(expectation);
   });
 
-  it('should return a object with type of GET_LOCAL_STORAGE_RENTALS, with the rentals array', () => {
+  it(`should return a object with type of GET_LOCAL_STORAGE_RENTALS, with the 
+  rentals array`, () => {
     const expectation = { type: 'GET_LOCAL_STORAGE_RENTALS', rentals: mockItems };
     const result = actions.getLocalStorageRentals(mockItems);
     expect(result).toEqual(expectation);
@@ -54,6 +56,25 @@ describe('Action tests', () => {
   it('should return a object with type of ADD_QUOTE, with the delivery quote', () => {
     const expectation = { type: 'ADD_QUOTE', deliveryQuote: mockQuoteData };
     const result = actions.addQuote(mockQuoteData);
+    expect(result).toEqual(expectation);
+  });
+
+  it('should return a object with type of SELECTED_ITEM, with the selected item', () => {
+    const expectation = { type: 'SELECTED_ITEM', item: mockItem };
+    const result = actions.selectedItem(mockItem);
+    expect(result).toEqual(expectation);
+  });
+
+  it('should return a object with type of ADD_COMPLETED_ORDER, with the completed order', () => {
+    const expectation = { type: 'ADD_COMPLETED_ORDER', order: mockOrderInfo };
+    const result = actions.addCompletedOrder(mockOrderInfo);
+    expect(result).toEqual(expectation);
+  });
+
+  it(`should return a object with type of GET_LOCAL_STORAGE_ORDERS, with an array of 
+  completed orders`, () => {
+    const expectation = { type: 'GET_LOCAL_STORAGE_ORDERS', orders: [mockOrderInfo] };
+    const result = actions.getLocalStorageOrders([mockOrderInfo]);
     expect(result).toEqual(expectation);
   });
 });

@@ -39,7 +39,9 @@
       "!src/index.js",
       "!src/setupTests.js",
       "!src/registerServiceWorker.js",
-      "!src/reducers/index.js"
+      "!src/reducers/index.js",
+      "!src/thunk/__mock__/createDeliveryPost.js",
+      "!src/thunk/__mock__/getDeliveryQuote.js"
     ]
   }
 }
