@@ -10,12 +10,12 @@ export class UserAccountDisplay extends Component {
     const usersOrders = completedOrders.filter(order => order.dropoff.notes === activeUser.email);
     return usersOrders.map(order => {
       return (
-        <div key={uuidv1()}>
-          <h3>Order Id: {order.id}</h3>
-          <h3>Description: {order.manifest.description}</h3>
-          <h3>Deliver By: {order.dropoff_deadline}</h3>
-          <h3>Cost: ${order.fee/100}</h3>
-          <a href={order.tracking_url}>Track Your Order</a>
+        <div className='complete-order' key={uuidv1()}>
+          <h3 className='complete-info'>Order Id: {order.id}</h3>
+          <h3 className='complete-info'>Description: {order.manifest.description}</h3>
+          <h3 className='complete-info'>Deliver By: {order.dropoff_deadline}</h3>
+          <h3 className='complete-price'>Cost: ${order.fee/100}</h3>
+          <a className='complete-link' href={order.tracking_url}>Track Your Order</a>
         </div>
       );
     });

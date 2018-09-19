@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createDeliveryPost } from '../../thunk/createDeliveryPost';
 import { removeRental } from '../../actions';
-import loadingGif from '../../loadingGif.gif';
+import loadingGif from '../../images/loadingGif.gif';
 import './styles.css';
 
 export class RentalConfirmation extends Component {

@@ -1,0 +1,7 @@
+.complete-order {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(88, 88, 88, 0.8);
+  margin: 1em;
+  border-radius: 1em;
+  padding: 1em; }
