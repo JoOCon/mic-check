@@ -42,15 +42,23 @@ export class RentalConfirmation extends Component {
     const displayQuote = () => {
       if (id) {
         return (
-          <div>
-            <h1>{name}</h1>
-            <img alt='rental item' src={image}/>
-            <h1>Item Info: {description}</h1>
-            <h1>Estimated Arrival: {dropoff_eta}</h1>
-            <h1>Delivery Duration: {duration} minutes</h1>
-            <h1>Rental Cost: ${cleanedPrice}</h1>
-            <h1>Offer Expires At: {expires}</h1>
-            <button onClick={() => this.handleOrder()}>Place Order</button>
+          <div className='confirmation-container'>
+            <img className='confirmation-rental-image' alt='rental item' src={image}/>
+            <div className='confirmation-info'>
+              <h1 className='confirmation-title'>{name}</h1>
+              <p className='details'>Item Info: {description}</p>
+              <p className='details'>Estimated Arrival: {dropoff_eta}</p>
+              <p className='details'>Offer Expires At: {expires}</p>
+              <p className='details'>Delivery Duration: {duration} minutes</p>
+              <h1 className='rental-price'>Rental Cost: ${cleanedPrice}</h1>
+              <button 
+                className='rental-button'
+                onClick={() => this.handleOrder()}>Place Order
+              </button>
+            </div>
+            {this.state.redirect && (
+              <Redirect to={`/${userName}`} />
+            )}
           </div>
         );
       } else {
@@ -63,9 +71,6 @@ export class RentalConfirmation extends Component {
     return (
       <div>
         {displayQuote()}
-        {this.state.redirect && (
-          <Redirect to={`/${userName}`} />
-        )}
       </div>
     );
   }

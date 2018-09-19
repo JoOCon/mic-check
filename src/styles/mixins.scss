@@ -2,10 +2,13 @@
   background-color: $dark-gray;
   font-size: 1.3em;
   border-radius: .5em;
-  border: 1px solid $gray;
+  border: 1px solid $dark-gray;
   width: 7em;
+  color: $black;
+  font-family: $main-font;
+  margin: 0 0 .2em .2em;
   &:hover { 
-    // color: $red;
+    color: $black;
     border: 1px solid $red;
     cursor: pointer;
   }
@@ -13,7 +16,7 @@
 
 @mixin text-link() {
   background:none;
-  border:none;
+  border: none;
   color: $dark-gray;
   font-size: .8em;
   font-family: $sub-font;

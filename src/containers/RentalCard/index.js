@@ -31,16 +31,14 @@ export class RentalCard extends Component {
     };
 
     return (
-      <div>
-        <div className='rental-card'>
-          <img className='rental-image' alt='item for rent' src={image}/>
-          <div className='card-info'>
-            <h1 className='rental-title'>{name}</h1>
-            <h2 className='rental-location'>Location: {itemLocation}</h2>
-            <p className='rental-description'>Info: {description}</p>
-            <h3 className='rental-price'>Price: ${rentalPrice}</h3>
-            {rentalButton()}
-          </div>
+      <div className='rental-card'>
+        <img className='rental-image' alt='item for rent' src={image}/>
+        <div className='card-info'>
+          <h1 className='rental-title'>{name}</h1>
+          <h2 className='rental-location'>Location: {itemLocation}</h2>
+          <p className='rental-description'>Info: {description}</p>
+          <h3 className='rental-price'>Price: ${rentalPrice}</h3>
+          {rentalButton()}
         </div>
         {this.state.redirect && (
           <Redirect to={`/${userName}/Confirmation`} />

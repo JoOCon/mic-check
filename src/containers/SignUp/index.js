@@ -136,8 +136,8 @@ export class SignUp extends Component {
             {redirect && (
               <Redirect to={`/${this.props.activeUser.userName}`} />
             )}
-            <Link to='/Login'><button className='login'>Have An Account?</button></Link>
-            <Link to='/'><button className='home'>Home</button></Link>
+            <Link to='/Login'><button className='signup-login'>Have An Account?</button></Link>
+            <Link to='/'><button className='signup-home'>Home</button></Link>
           </div>
         </form>
       </div>

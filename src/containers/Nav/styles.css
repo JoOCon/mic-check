@@ -1,5 +1,6 @@
 .main-nav {
-  align-self: center; }
+  align-self: center;
+  padding-right: 1em; }
 
 .nav-container {
   display: flex;
@@ -14,8 +15,12 @@
   background-color: #292929;
   font-size: 1.3em;
   border-radius: .5em;
-  border: 1px solid #585858;
-  width: 7em; }
+  border: 1px solid #292929;
+  width: 7em;
+  color: black;
+  font-family: "Noto Serif JP", sans-serif;
+  margin: 0 0 .2em .2em; }
   .main-button:hover {
+    color: black;
     border: 1px solid rgba(100, 0, 0, 0.9);
     cursor: pointer; }
