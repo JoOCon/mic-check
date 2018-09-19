@@ -5,8 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: url("https://wallpaperclicker.com/storage/wallpaper/cool-music-wallpapers-photo-87706624.jpg#.W5hRvm6U_lU.link") no-repeat;
+  background: rgba(100, 0, 0, 0.9) url("https://i2.wp.com/www.techtapper.com/wp-content/uploads/2013/08/cool-music-backgrounds-desktop-103-hd-wallpapers.jpg") no-repeat;
   background-blend-mode: multiply;
   background-size: cover;
-  background-position: bottom;
-  color: white; }
+  background-position: bottom; }

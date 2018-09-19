@@ -10,25 +10,29 @@ export class NavBar extends Component {
     const { userName } = this.props.activeUser;
     const loggedIn = () => {
       return (
-        <div>
+        <div className='nav-container'>
           <h1>{`Hello, ${userName}`}</h1>
-          <Link to={`/${userName}/Orders`}><button className='orders'>Your Orders</button></Link>
-          <Link to='/'>
-            <button onClick={this.props.logoutActiveUser} className='logout'>Logout</button>
-          </Link>
-          <Link to={`/${userName}/AddRental`}>
-            <button className='add-rental'>Add Rental</button>
-          </Link>
+          <div className='button-container'>
+            <Link to={`/${userName}/Orders`}>
+              <button className='main-button'>Your Orders</button>
+            </Link>
+            <Link to={`/${userName}/AddRental`}>
+              <button className='main-button'>Add Rental</button>
+            </Link>
+            <Link to='/'>
+              <button onClick={this.props.logoutActiveUser} className='main-button'>Logout</button>
+            </Link>
+          </div>
         </div>
       );
     };
 
     const ordersPage = () => {
       return (
-        <div>
-          <Link to={`/${userName}`}><button className='home'>Home</button></Link>
+        <div className='nav-container'>
+          <Link to={`/${userName}`}><button className='main-button'>Home</button></Link>
           <Link to='/'>
-            <button onClick={this.props.logoutActiveUser} className='logout'>Logout</button>
+            <button onClick={this.props.logoutActiveUser} className='main-button'>Logout</button>
           </Link>
         </div>
       );
@@ -36,15 +40,15 @@ export class NavBar extends Component {
 
     const mainNav = () => {
       return (
-        <div>
-          <Link to='/Login'><button className='login'>Login</button></Link>
-          <Link to='/SignUp'><button className='signup'>SignUp</button></Link>
+        <div className='nav-container'>
+          <Link to='/Login'><button className='main-button'>Login</button></Link>
+          <Link to='/SignUp'><button className='main-button'>SignUp</button></Link>
         </div>
       );
     };
 
     return (
-      <div>
+      <div className='main-nav'>
         <Route exact path={`/${userName}`} component={loggedIn}></Route>
         <Route exact path={`/${userName}/Orders`} component={ordersPage}></Route>
         <Route exact path={`/${userName}/Confirmation`} component={ordersPage}></Route>

@@ -1,0 +1,21 @@
+.main-nav {
+  align-self: center; }
+
+.nav-container {
+  display: flex;
+  flex-direction: column; }
+
+.nav-container h1 {
+  margin: 0 0 .5em 0;
+  color: #292929;
+  text-align: end; }
+
+.main-button {
+  background-color: #292929;
+  font-size: 1.3em;
+  border-radius: .5em;
+  border: 1px solid #585858;
+  width: 7em; }
+  .main-button:hover {
+    border: 1px solid rgba(100, 0, 0, 0.9);
+    cursor: pointer; }

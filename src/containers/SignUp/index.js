@@ -78,7 +78,7 @@ export class SignUp extends Component {
     return (
       <div>
         <form className='user-signup' onSubmit={this.handleSubmit}>
-          <h2 className='log-header'>Sign Up</h2>
+          <h2 className='signup-header'>Sign Up</h2>
           <input
             className='input-field'
             name='userName'
@@ -131,13 +131,15 @@ export class SignUp extends Component {
             value={state}
             onChange={this.handleChange}
           />
-          <button className="signup-button">SignUp</button>
+          <button className='signup-button'>SignUp</button>
+          <div className="button-wrap">
+            {redirect && (
+              <Redirect to={`/${this.props.activeUser.userName}`} />
+            )}
+            <Link to='/Login'><button className='login'>Have An Account?</button></Link>
+            <Link to='/'><button className='home'>Home</button></Link>
+          </div>
         </form>
-        {redirect && (
-          <Redirect to={`/${this.props.activeUser.userName}`} />
-        )}
-        <Link to='/Login'><button className='login'>Login</button></Link>
-        <Link to='/'><button className='home'>Home</button></Link>
       </div>
     );
   }

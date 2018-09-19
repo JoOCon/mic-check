@@ -1,15 +1,12 @@
 @mixin button(){
-  width: 5em;
-  font-size: 1em;
-  padding: .2em .5em;
-  border-radius: 1em;
-  border: 0px;
-  background-color: $gold;
-  font-family: $sub-font;
-  font-weight: 600;
-  color: $turquoise;
+  background-color: $dark-gray;
+  font-size: 1.3em;
+  border-radius: .5em;
+  border: 1px solid $gray;
+  width: 7em;
   &:hover { 
-    color: black;
+    // color: $red;
+    border: 1px solid $red;
     cursor: pointer;
   }
 }
@@ -17,13 +14,13 @@
 @mixin text-link() {
   background:none;
   border:none;
-  color: $gold;
+  color: $dark-gray;
   font-size: .8em;
   font-family: $sub-font;
   margin:0;
   padding:0;
   &:hover { 
-    color: $light-blue;
+    color: $red;
     cursor: pointer;
   }
 }

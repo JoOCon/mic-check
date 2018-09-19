@@ -1,13 +1,63 @@
-.Login-button {
-  width: 5em;
-  font-size: 1em;
-  padding: .2em .5em;
+.log-header {
+  color: rgba(100, 0, 0, 0.9);
+  margin: 0 0 1em 0; }
+
+.user-login {
+  align-items: center;
+  border: 1px solid rgba(100, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 10em;
+  padding: 1em;
+  background-color: rgba(88, 88, 88, 0.8);
+  height: fit-content;
+  width: 25em;
+  font-family: "Montserrat", sans-serif; }
+
+.user-login input {
   border-radius: 1em;
-  border: 0px;
-  background-color: #ffcb9a;
+  height: 2em;
+  width: 60%;
+  margin-bottom: 1.5em;
+  font-size: .85em;
+  font-weight: bold; }
+
+.button-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+
+.sign-up {
+  background: none;
+  border: none;
+  color: #292929;
+  font-size: .8em;
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  color: #116466; }
+  margin: 0;
+  padding: 0; }
+  .sign-up:hover {
+    color: rgba(100, 0, 0, 0.9);
+    cursor: pointer; }
+
+.home {
+  background: none;
+  border: none;
+  color: #292929;
+  font-size: .8em;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0; }
+  .home:hover {
+    color: rgba(100, 0, 0, 0.9);
+    cursor: pointer; }
+
+.Login-button {
+  background-color: #292929;
+  font-size: 1.3em;
+  border-radius: .5em;
+  border: 1px solid #585858;
+  width: 7em; }
   .Login-button:hover {
-    color: black;
+    border: 1px solid rgba(100, 0, 0, 0.9);
     cursor: pointer; }

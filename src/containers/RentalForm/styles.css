@@ -1,13 +1,9 @@
 .signup-button {
-  width: 5em;
-  font-size: 1em;
-  padding: .2em .5em;
-  border-radius: 1em;
-  border: 0px;
-  background-color: #ffcb9a;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  color: #116466; }
+  background-color: #292929;
+  font-size: 1.3em;
+  border-radius: .5em;
+  border: 1px solid #585858;
+  width: 7em; }
   .signup-button:hover {
-    color: black;
+    border: 1px solid rgba(100, 0, 0, 0.9);
     cursor: pointer; }
