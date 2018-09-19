@@ -21,7 +21,6 @@ export class RentalForm extends Component {
   }
 
   handleChange = (event) => {
-    event.preventDefault();
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
@@ -79,68 +78,66 @@ export class RentalForm extends Component {
     } = this.state;
     const { userName } = this.props.activeUser;
     return (
-      <div>
-        <form className='rental-form' onSubmit={this.handleSubmit}>
-          <h2 className='log-header'>Manage Rental</h2>
-          <input
-            className='input-field'
-            name='name'
-            placeholder='Item Name'
-            value={name}
-            onChange={this.handleChange}
-          />
-          <input
-            className='input-field'
-            name='street'
-            placeholder='Street'
-            value={street}
-            onChange={this.handleChange}
-          />
-          <input
-            className='input-field'
-            name='city'
-            placeholder='City'
-            value={city}
-            onChange={this.handleChange}
-          />
-          <input
-            className='input-field'
-            name='state'
-            placeholder='State'
-            value={state}
-            onChange={this.handleChange}
-          />
-          <input
-            className='input-field'
-            name='description'
-            placeholder='Item Description'
-            type='text'
-            value={description}
-            onChange={this.handleChange}
-          />
-          <input
-            className='input-field'
-            name='rentalPrice'
-            placeholder='Rental Price'
-            type='number'
-            value={rentalPrice}
-            onChange={this.handleChange}
-          />
-          <input
-            className='input-field'
-            name='image'
-            placeholder='Image'
-            type='url'
-            value={image}
-            onChange={this.handleChange}
-          />
-          <button className="submit">Submit</button>
-        </form>
+      <form className='rental-form' onSubmit={this.handleSubmit}>
+        <h2 className='rental-header'>Manage Rental</h2>
+        <input
+          className='input-field'
+          name='name'
+          placeholder='Item Name'
+          value={name}
+          onChange={this.handleChange}
+        />
+        <input
+          className='input-field'
+          name='street'
+          placeholder='Street'
+          value={street}
+          onChange={this.handleChange}
+        />
+        <input
+          className='input-field'
+          name='city'
+          placeholder='City'
+          value={city}
+          onChange={this.handleChange}
+        />
+        <input
+          className='input-field'
+          name='state'
+          placeholder='State'
+          value={state}
+          onChange={this.handleChange}
+        />
+        <input
+          className='input-field'
+          name='description'
+          placeholder='Item Description'
+          type='text'
+          value={description}
+          onChange={this.handleChange}
+        />
+        <input
+          className='input-field'
+          name='rentalPrice'
+          placeholder='Rental Price'
+          type='number'
+          value={rentalPrice}
+          onChange={this.handleChange}
+        />
+        <input
+          className='input-field'
+          name='image'
+          placeholder='Image'
+          type='url'
+          value={image}
+          onChange={this.handleChange}
+        />
+        <button className="submit-button">Submit</button>
         {redirect && (
           <Redirect to={`/${userName}`} />
         )}
-        <Link to={`/${userName}`}><button className='back'>Back</button></Link>
-      </div>
+        <Link to={`/${userName}`}><button className='back-button'>Back</button></Link>
+      </form>
     );
   }
 }

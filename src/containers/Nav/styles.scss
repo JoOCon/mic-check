@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.main-nav{
+  align-self: center;
+  padding-right: 1em;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-container h1 {
+  margin: 0 0 .5em 0;
+  color: $dark-gray;
+  text-align: end;
+}
+
+.main-button {
+  @include button();
+}
+
+.button-container{
+
+}

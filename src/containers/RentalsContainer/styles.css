@@ -1,0 +1,6 @@
+.rentals-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll;
+  height: 48em; }

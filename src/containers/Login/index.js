@@ -16,7 +16,6 @@ export class Login extends Component {
   }
 
   handleChange = (event) => {
-    event.preventDefault();
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
@@ -66,13 +65,15 @@ export class Login extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <button className="Login-button">Login</button>
+          <button className="main-button">Login</button>
+          <div className="button-wrap">
+            {redirect && (
+              <Redirect to={`/${userName}`} />
+            )}
+            <Link to='/SignUp'><button className='sign-up'>Need An Account?</button></Link>
+            <Link to='/'><button className='home'>Home</button></Link>
+          </div>
         </form>
-        {redirect && (
-          <Redirect to={`/${userName}`} />
-        )}
-        <Link to='/SignUp'><button className='sign-up'>Sign Up</button></Link>
-        <Link to='/'><button className='home'>Home</button></Link>
       </div>
     );
   }

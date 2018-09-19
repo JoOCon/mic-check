@@ -12,7 +12,7 @@ export class RentalsContainer extends Component {
     );
     
     return (
-      <div>
+      <div className='rentals-container'>
         {displayRentals}
       </div>
     );

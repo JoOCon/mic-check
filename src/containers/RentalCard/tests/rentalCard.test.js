@@ -27,6 +27,13 @@ describe('RentalsCard tests', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should have initial state', () => {
+    const mockInitalState = {
+      redirect: false
+    };
+    expect(wrapper.state()).toEqual(mockInitalState);
+  });
+
   describe('MapStateToProps', () => {
     it('should have a activeUser data object in props', () => {
       const mockState = {activeUser: mockUser};

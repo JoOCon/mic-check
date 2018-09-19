@@ -1,6 +1,49 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
+.signup-header {
+  color: $red;
+  margin: .3em 0
+}
+
+.user-signup {
+  align-items: center;
+  border: 1px solid $red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 6em;
+  padding: 1em;
+  background-color: $clear-gray;
+  height: fit-content;
+  width: 25em;
+  font-family: $sub-font;
+}
+
+.user-signup input {
+  border-radius: 1em;
+  height: 2em;
+  width: 60%;
+  margin: .5em 0;
+  font-size: .85em;
+  font-weight: bold;
+}
+
+.button-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.signup-login {
+  @include text-link();
+}
+
+.signup-home {
+  @include text-link();
+}
+
 .signup-button {
   @include button();
+  margin-top: 1em;
 }

@@ -1,6 +1,48 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
+.log-header {
+  color: $red;
+  margin: 0 0 1em 0;
+}
+
+.user-login {
+  align-items: center;
+  border: 1px solid $red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 10em;
+  padding: 1em;
+  background-color: $clear-gray;
+  height: fit-content;
+  width: 25em;
+  font-family: $sub-font;
+}
+
+.user-login input {
+  border-radius: 1em;
+  height: 2em;
+  width: 60%;
+  margin-bottom: 1.5em;
+  font-size: .85em;
+  font-weight: bold;
+}
+
+.button-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sign-up{
+  @include text-link();
+}
+
+.home{
+  @include text-link();
+}
+
 .Login-button {
   @include button();
 }

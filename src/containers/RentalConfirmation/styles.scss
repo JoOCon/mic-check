@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.rental-card {
+  display: flex;
+  background-color: $clear-gray;
+  margin: 1em;
+  border-radius: 1em;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: .5em 1em;
+  width: 22em;
+}
+
+.rental-image {
+  height: 14em;
+  width: 14em;
+  border-radius: 1em;
+}
+
+.login {
+  @include button();
+}
+
+.rental-button {
+  @include button();
+}
+
+.rental-title {
+  margin: 0;
+}
+
+.rental-location {
+  margin: 0;
+}
+
+.rental-description {
+  margin: 0;
+}
+
+.rental-price {
+  margin: 0;
+}

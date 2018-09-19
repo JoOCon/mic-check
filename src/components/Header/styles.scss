@@ -1,3 +1,19 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
 .header {
-  
+  display: flex;
+  justify-content: space-between;
+  background-color: $gray;
+  width: 100%;
+}
+
+.title {
+  align-self: flex-end;
+  font-family: $main-font;
+  color: $dark-gray;
+  text-shadow: 1px 1px $red;
+  font-size: 4em;
+  margin: 0;
+  padding-left: .3em;
 }
