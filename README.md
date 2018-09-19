@@ -4,22 +4,18 @@ Mic-Check is a project designed to help musitions coordinate rental equipment de
 
 ### Installation Instructions
 
-* git clone https://github.com/TFisch/movie-tracker
-* cd movie-tracker
-* cd movie-tracker-be
-* npm install
-* cd movie-tracker-fe
+* git clone https://github.com/JoOCon/mic-check
 * npm install
 * npm start
 
 ### Application Navigation
 
-From the home screeen a user may select "Sign up" to create a new account or "Log in" if they are an existing user. Once information is entered the user will find themselves located at their user page. From here they can select favorites by clicking the heart icon and view the star rating of each film by hovering over it. By clicking the "Favorites" button the user can view the list of selected films.
+From the home screeen a user may select "Sign up" to create a new account or "Log in" if they are an existing user. Once information is entered the user will find themselves located at their user page. Once logged in the user can select add rental and it will navigate you to a rental form. On the home page when items for rent are populated a user can click to rent a item this will produce a quote and if desired the user can confirm the order. Completed orders as well as order delivery tracking can be checked in by clicking the your orders button.
 
 ### Screenshots
 
-![on-page-load](src/Images/screen-login.png)  
+![on-page-load](src/home-page.png)  
 
-![on-page-load](src/Images/screen-user.png) 
+![on-page-load](src/complete.png) 
 
-![on-page-load](src/Images/screen-favorite.png)  
+![on-page-load](src/login.png)  
