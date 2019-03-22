@@ -16,6 +16,4 @@ From the home screen a user may select "Sign up" to create a new account or "Log
 
 ![on-page-load](src/images/home-page.png)  
 
-![on-page-load](src/images/complete.png) 
-
-![on-page-load](src/images/login.png)  
+![on-page-load](src/images/complete.png)  
